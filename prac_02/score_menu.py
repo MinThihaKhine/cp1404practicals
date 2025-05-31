@@ -1,19 +1,15 @@
 """
-Write a complete Python program following the standard structure that uses a main and other functions.
-Use a main menu following the standard menu pattern.
+Score menu program with validation and display options
+Users can get valid scores, view score results, display stars, and quit.
 
-The menu should have four separate options:
+This program provides a menu interface for :
+    (G)et a valid score (must be 0-100 inclusive)
+    (P)rint result (copy or import your function to determine the result from score.py)
+    (S)how stars (this should print as many stars as the score)
+    (Q)uit
 
-(G)et a valid score (must be 0-100 inclusive)
-(P)rint result (copy or import your function to determine the result from score.py)
-(S)how stars (this should print as many stars as the score)
-(Q)uit
-Handle each of these (except quit) separately, and consider how you can reuse your functions.
-
-In main(), before the menu loop, get a valid score using your function.
-When the user quits, say some kind of "farewell".
+Min Thiha Khine (#14686570)
 """
-
 # CONSTANTS
 LOWER_BOUND = 0
 UPPER_BOUND = 100
@@ -26,7 +22,7 @@ MENU = """(G)et a valid score
 (Q)uit"""
 
 
-def main():
+def main(): #Main Function
     """Display menu and handle score operations until user quits."""
     score = get_valid_score()  # Initial setup before menu
 
