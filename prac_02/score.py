@@ -1,18 +1,9 @@
 """
 Min Thiha Khine
-#14686570
+(#14686570)
 
-CP1404/CP5632 - Practical
-Broken program to determine score status
-"""
-
-"""
-Assumptions - "There is no intention to do any repetition." + Original code not having while validation check
-The instruction seems to stressed out on the not to do 'ANY REPETITION' 
--so I assume it will only run once to give either 4 outputs
-
-"Rewrite the following program using the most efficient if, elif, else structure you can "
-"""
+Score status determining program with functions
+This program validates and categorizes scores based on predefined ranges."""
 
 #CONSTANTS
 LOWER_BOUND = 0
