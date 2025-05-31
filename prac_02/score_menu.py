@@ -28,6 +28,28 @@ MENU = """(G)et a valid score
 
 def main():
     """Display menu and handle score operations until user quits."""
+    score = get_valid_score()  # Initial setup before menu
+
+    # Display menu and get choice
+    print(MENU)
+    choice = input(">>> ").upper()
+    # Choice loop as long as user doesn't quit (Q)
+    while choice != 'Q':  # Repeat this block of code unless user enters Q
+        if choice == "G": # Get valid score
+            score = get_valid_score()
+        elif choice == "P": # Print result for a given score
+            result = determine_score_result(score)
+            print(result)
+        elif choice == "S": # Print stars equal to the score value.
+            show_stars(score)
+        else: # Invalid choice message
+            print("Invalid option")
+
+        # Display Menu again and get new choice
+        print("\n", MENU, sep = "") #Clean output
+        choice = input(">>> ").upper()
+    print("Farewell my dear user ;-;")  #Finished message
+
 
 def get_valid_score():
     """Get a valid score between 0 and 100 inclusive."""
@@ -53,9 +75,4 @@ def show_stars(score):
     print("*" * int(score))
 
 
-
-
-# main()
-
-
-# get_valid_score()
+main() # The program starts here
