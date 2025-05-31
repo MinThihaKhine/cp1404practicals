@@ -28,6 +28,7 @@ def main(): #Main function
     print(result)
 
 def determine_score_result(score):
+    """Determine the result category for a given score."""
     if score < LOWER_BOUND or score > UPPER_BOUND:  # Invalid Score
         return "Invalid score"
     elif score >= EXCELLENT_SCORE_BOUND:  # Excellent Score
