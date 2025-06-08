@@ -1,4 +1,4 @@
-import randoms
+import random
 
 print(random.randint(5, 20))  # line 1
 # What did you see on line 1?
