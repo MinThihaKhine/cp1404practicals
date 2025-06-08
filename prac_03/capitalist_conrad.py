@@ -7,7 +7,7 @@ a 50% chance that it decreases by 0 to 5%.
 If the price rises above $1000, or falls below $0.01, the program should end.
 The price should be displayed to the nearest cent (e.g. $33.59, not $33.5918232901)
 """
-import random
+import randoms
 
 #Constants
 MAX_INCREASE = 0.175  # 17.5%
