@@ -6,7 +6,7 @@ Min Thiha Khine
 NUMBER_OF_PROMPTS = 5
 USERNAMES = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface', 'BaseStdIn',
              'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer',
-             'bob']  # Change CONSTENT NAME
+             'bob']  # Change CONSTANT NAME
 
 def main():
     numbers = []
