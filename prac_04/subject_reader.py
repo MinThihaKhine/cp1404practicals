@@ -1,4 +1,5 @@
-"""
+""" Min Thiha Khine
+#14686570
 CP1404/CP5632 Practical
 Data file -> lists program
 """
@@ -8,17 +9,18 @@ FILENAME = "subject_data.txt"
 
 def main():
     data = load_data()
-    # print(data)
+    display_data(data)
+
+def display_data(data):
+    """Display data in aligned format"""
     maximum_subject_length = max(len(entry[0]) for entry in data)
     maximum_teacher_length = max(len(entry[1]) for entry in data)
     maximum_student_length = max(len(str(entry[2])) for entry in data)
-
     for entry in data:
         subject_code = entry[0]
         teacher_name = entry[1]
         number_of_students = entry[2]
         print(f"{subject_code:<{maximum_subject_length}} is taught by {teacher_name:<{maximum_teacher_length}} and has {number_of_students:>{maximum_student_length}} students")
-
 
 def load_data():
     """Read data from file formatted like: subject,lecturer,number of students."""
@@ -36,6 +38,5 @@ def load_data():
         print("----------")
     input_file.close()
     return data
-
 
 main()
