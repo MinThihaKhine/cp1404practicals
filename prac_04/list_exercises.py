@@ -7,10 +7,9 @@ USERNAMES = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'B
 def main():
     numbers = []
     for i in range(NUMBER_OF_PROMPTS):
-        number = int(input("Number: "))
+        number = float(input("Number: "))
         numbers.append(number)
     display_numbers_details(numbers)
-
     validate_username()
 
 
