@@ -1,6 +1,8 @@
 """
 CP1404/CP5632 Practical
 List comprehensions
+Min Thiha Khine
+#14686570
 """
 
 names = ["Bob", "Angel", "Jimi", "Alan", "Ada"]
@@ -46,3 +48,5 @@ print(big_numbers)
 # TODO: (more advanced) use a list comprehension and the join string method
 # to create a string (not list) of the last names for those full names longer than 11 characters
 # the result should be: 'Harlem, Hendrix, Lovelace'
+long_last_names = ", ".join([fullname.split()[1] for fullname in full_names if len(fullname) > 11])
+print(long_last_names)
