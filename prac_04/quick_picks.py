@@ -19,6 +19,13 @@ NUMBER_OF_RANDOM_NUMBERS = 6
 number_of_picks = int(input("How many quick picks? "))
 
 
+
+def main():
+    for i in range(number_of_picks):
+        random_numbers = generate_picks(NUMBER_OF_RANDOM_NUMBERS, MINIMUM_RANDOM_NUMBER, MAXIMUM_RANDOM_NUMBER)
+        print(random_numbers)
+
+
 def generate_picks(number, lower_bound, upper_bound ):
     random_numbers = []
     for i in range(NUMBER_OF_RANDOM_NUMBERS):
@@ -29,10 +36,8 @@ def generate_picks(number, lower_bound, upper_bound ):
     return random_numbers
 
 
+main()
 
-for i in range(number_of_picks):
-    random_numbers = generate_picks(NUMBER_OF_RANDOM_NUMBERS, MINIMUM_RANDOM_NUMBER, MAXIMUM_RANDOM_NUMBER)
-    print(random_numbers)
 
 
 
