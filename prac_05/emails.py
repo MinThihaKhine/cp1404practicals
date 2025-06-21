@@ -11,6 +11,8 @@ def main():
     email = input("Email: ")
     while email != "":
         name = extract_name_from_email(email)
+        choice = input(f"Is your name {name}? (Y/n) ").lower().strip()
+
 
 
 
