@@ -1,7 +1,7 @@
 """
 Email
 Estimate: 15 minutes
-Actual:    minutes
+Actual:   16 minutes
 """
 
 def main():
@@ -16,14 +16,13 @@ def main():
             name = input("Name: ")
         email_to_name[email] = name
         email = input("Email: ")
-
-
+    print()
+    for email, name in email_to_name.items():
+        print(f"{name} ({email})")
 
 
 def extract_name_from_email(email):
     name = " ".join(email.split("@")[0].split('.'))
     return name.title()
-
-
 
 main()
