@@ -14,7 +14,6 @@ for state_code, state_name in CODE_TO_NAME.items():
     print(f"{state_code:<{maximum_code_length}} is {state_name}") # Dynamic Output format
 print()
 
-
 state_code = input("Enter short state: ").upper()
 while state_code != "":
     try:
