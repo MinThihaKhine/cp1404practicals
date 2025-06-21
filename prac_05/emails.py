@@ -10,6 +10,14 @@ def main():
 
     email = input("Email: ")
     while email != "":
-        pass
+        name = extract_name_from_email(email)
+
+
+
+def extract_name_from_email(email):
+    name = " ".join(email.split("@")[0].split('.'))
+    return name.title()
+
+
 
 main()
