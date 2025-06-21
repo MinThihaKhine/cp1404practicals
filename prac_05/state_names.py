@@ -7,7 +7,14 @@ File has been reformatted
 # TODO: Reformat this file so the dictionary code follows PEP 8 convention
 CODE_TO_NAME = {"QLD": "Queensland", "NSW": "New South Wales", "NT": "Northern Territory", "WA": "Western Australia",
                 "ACT": "Australian Capital Territory", "VIC": "Victoria", "TAS": "Tasmania", "SA": "South Australia"}
-print(CODE_TO_NAME)
+
+maximum_code_length = max(len(code) for code in CODE_TO_NAME.keys()) # Get maximum length for dynamic output formatting
+
+for state_code, state_name in CODE_TO_NAME.items():
+    print(f"{state_code:<{maximum_code_length}} is {state_name}") # Dynamic Output format
+print()
+
+
 
 state_code = input("Enter short state: ").upper()
 while state_code != "":
