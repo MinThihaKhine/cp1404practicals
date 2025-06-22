@@ -12,8 +12,7 @@ def main():
     """Coordinate the reading, processing and display of Wimbledon data."""
     records = load_records(FILENAME)
     champion_to_count, countries = analyze_data(records)
-
-
+    display_results(champion_to_count, countries)
 
 def load_records(filename):
     """Read CSV file and return championship data as a list of lists."""
@@ -24,7 +23,6 @@ def load_records(filename):
             parts = line.strip().split(",")
             records.append(parts)
     return records
-
 
 def analyze_data(records):
     """Process records to count champion wins and collect unique countries."""
@@ -40,9 +38,13 @@ def analyze_data(records):
         champion_to_count[champion] = champion_to_count.get(champion, 0) + 1
     return champion_to_count, countries
 
-
-
-
-
+def display_results(champion_to_count, countries):
+    """Display championship winners and countries."""
+    print("Wimbledon Champions: ")
+    for champion_name, count in champion_to_count.items():
+        print(champion_name, count)
+    print()
+    print(f"These {len(countries)} countries have won Wimbledon: ")
+    print(", ".join(sorted(countries)))
 
 main()
