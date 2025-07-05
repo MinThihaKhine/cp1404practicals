@@ -3,6 +3,7 @@ Estimated: 15 minutes
 Actual: minutes
 """
 
+from datetime import datetime
 
 class Guitar:
     def __init__(self, name="", year=0, cost=0):
@@ -14,6 +15,9 @@ class Guitar:
     def __str__(self):
         """Return a string formatting of the Guitar object"""
         return f"{self.name} ({self.year}) : ${self.cost:,.2f}"
+
+    def get_age(self):
+        """Return the age of the guitar in years."""
 
 
 
