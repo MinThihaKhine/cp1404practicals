@@ -18,6 +18,9 @@ class Guitar:
 
     def get_age(self):
         """Return the age of the guitar in years."""
+        current_year  = datetime.today().year
+        age = current_year - self.year
+        return age
 
 
 
