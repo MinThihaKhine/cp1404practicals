@@ -10,3 +10,10 @@ class Guitar:
         self.name = name
         self.year = year
         self.cost = cost
+
+    def __str__(self):
+        """Return a string formatting of the Guitar object"""
+        return f"{self.name} ({self.year}) : ${self.cost:,.2f}"
+
+
+
