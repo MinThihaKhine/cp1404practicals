@@ -5,6 +5,9 @@ Actual: minutes
 
 from datetime import datetime
 
+VINTAGE_AGE = 50
+
+
 class Guitar:
     def __init__(self, name="", year=0, cost=0):
         """Initialize a Guitar instance"""
@@ -22,5 +25,7 @@ class Guitar:
         age = current_year - self.year
         return age
 
-
+    def is_vintage(self):
+        """Return True if guitar age is 50 or more years old, False otherwise."""
+        return self.get_age() >= VINTAGE_AGE
 
