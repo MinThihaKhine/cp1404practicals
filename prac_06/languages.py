@@ -3,7 +3,9 @@ Estimated: 8 minutes
 Actual:
 """
 
-from prac_06 import programming_language
+from prac_06.programming_language import ProgrammingLanguage
+
+
 
 python = ProgrammingLanguage("Python", "Dynamic", True, 1991)
 ruby = ProgrammingLanguage("Ruby", "Dynamic", True, 1995)
