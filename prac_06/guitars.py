@@ -13,16 +13,16 @@ def main():
     print("My guitars!")
 
     # Dummy test data
-    # guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
-    # guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
+    guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
+    guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
 
-    name = input("Name: ").strip()
-    while name != "":
-        year = int(get_valid_number("Year: "))
-        cost = get_valid_number("Cost: $")
-        guitars.append(Guitar(name, year, cost))
-        print(f"{name} ({year}) : ${cost:.2f} added.\n")
-        name = input("Name: ").strip()
+    # name = input("Name: ").strip()
+    # while name != "":
+    #     year = int(get_valid_number("Year: "))
+    #     cost = get_valid_number("Cost: $")
+    #     guitars.append(Guitar(name, year, cost))
+    #     print(f"{name} ({year}) : ${cost:.2f} added.\n")
+    #     name = input("Name: ").strip()
 
     print("\n... snip ...\n")
     print("These are my guitars:")
