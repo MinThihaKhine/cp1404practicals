@@ -1,6 +1,6 @@
-"""
+"""Min Thiha Khine
 Estimated: 15 minutes
-Actual: minutes
+Actual: 12 minutes
 """
 
 from datetime import datetime
