@@ -1,6 +1,6 @@
 """
 Estimated: 20 minutes
-Actual:  minutes
+Actual:  44 minutes
 """
 
 from prac_06.guitar import Guitar
@@ -13,16 +13,16 @@ def main():
     print("My guitars!")
 
     # Dummy test data
-    guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
-    guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
+    # guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
+    # guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
 
-    # name = input("Name: ").strip()
-    # while name != "":
-    #     year = int(get_valid_number("Year: "))
-    #     cost = get_valid_number("Cost: $")
-    #     guitars.append(Guitar(name, year, cost))
-    #     print(f"{name} ({year}) : ${cost:.2f} added.\n")
-    #     name = input("Name: ").strip()
+    name = input("Name: ").strip()
+    while name != "":
+        year = int(get_valid_number("Year: "))
+        cost = get_valid_number("Cost: $")
+        guitars.append(Guitar(name, year, cost))
+        print(f"{name} ({year}) : ${cost:.2f} added.\n")
+        name = input("Name: ").strip()
 
     print("\n... snip ...\n")
     print("These are my guitars:")
@@ -55,8 +55,7 @@ def display_guitars(guitars):
     # Print each guitar
     for count, guitar in enumerate(guitars, 1):
         is_vintage = " (vintage)" if guitar.is_vintage() else ""
-        print(f"Guitar {count}: {guitar.name:>{max_name_length}} ({guitar.year}), "
-              f"worth ${guitar.cost:>{max_cost_length},.2f}{is_vintage}")
+        print(f"Guitar {count}: {guitar.name:>{max_name_length}} ({guitar.year}), worth ${guitar.cost:>{max_cost_length},.2f}{is_vintage}")
 
 
 main()
