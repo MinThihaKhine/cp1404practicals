@@ -85,6 +85,7 @@ def using_csv_namedtuple():
     in_file.readline()
     for language in map(Language._make, csv.reader(in_file)):
         print(language.name, 'was released in', language.year)
+        print(f"{language.name}, 'was released in', {language.year}, supports pointer arithmetic: {language.pointer_arithmetic}")
         print(repr(language))
 
 # using_csv_namedtuple()
