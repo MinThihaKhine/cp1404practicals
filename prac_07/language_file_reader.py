@@ -41,7 +41,7 @@ def main():
         print(language)
 
 
-main()
+# main()
 
 
 def using_csv():
@@ -88,4 +88,4 @@ def using_csv_namedtuple():
         print(f"{language.name}, 'was released in', {language.year}, supports pointer arithmetic: {language.pointer_arithmetic}")
         print(repr(language))
 
-# using_csv_namedtuple()
+using_csv_namedtuple()
