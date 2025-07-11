@@ -80,7 +80,7 @@ def using_namedtuple():
 
 def using_csv_namedtuple():
     """Language file reader version using both csv module and named tuple."""
-    Language = namedtuple('Language', 'name, typing, reflection, year')
+    Language = namedtuple('Language', 'name, typing, reflection, year, pointer_arithmetic')
     in_file = open("languages.csv", "r")
     in_file.readline()
     for language in map(Language._make, csv.reader(in_file)):
