@@ -27,11 +27,10 @@ def main():
     guitars.sort()
     print(f"\nThese are my current guitars:")
     display_guitars(guitars)
-    print(f"Wrote {len(guitars)} guitars to {FILENAME}")
 
     # Write all guitars back to file
     write_guitars_to_file(FILENAME, guitars)
-
+    print(f"Wrote {len(guitars)} guitars to {FILENAME}")
 
 
 def read_guitars(filename):
