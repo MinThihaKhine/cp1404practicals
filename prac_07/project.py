@@ -19,11 +19,16 @@ class Project:
 
     def __str__(self):
         """Return string representation of a Project."""
-        return (f"{self.name},"
-                f" start: {self.start_date},"
-                f" priority {self.priority}, "
-                f"estimate: ${self.cost_estimate:.2f},"
-                f" completion: {self.completion_percentage}%")
+        # Format date string if it's not already formatted
+        if '/' in self.start_date and len(self.start_date.split('/')[2]) == 4:
+            # Convert to date object and format
+            date_obj = datetime.datetime.strptime(self.start_date, "%d/%m/%Y").date()
+            date_str = date_obj.strftime("%d/%m/%Y")
+        else:
+            date_str = self.start_date
+
+        return (f"{self.name}, start: {date_str}, priority {self.priority}, "
+                f"estimate: ${self.cost_estimate:.2f}, completion: {self.completion_percentage}%")
 
     def __repr__(self):
         """Return string representation for debugging."""
