@@ -17,7 +17,7 @@ def main():
     display_guitars(guitars)
 
     # Get new guitars from user
-    print("\nAdd your new guitars below ")
+    print("\nEnter guitar details (press Enter for empty name to stop):")
     new_guitars = get_new_guitars()
 
 
@@ -46,6 +46,22 @@ def display_guitars(guitars):
     for i, guitar in enumerate(guitars, 1):
         print(f"Guitar {i}: {guitar}")
 
+def get_new_guitars():
+    """Get new guitar information from user input."""
+    guitars = []
+
+    name = input("Guitar name: ").strip()
+    while name != "":
+        year = int(get_valid_number("Year: "))
+        cost = get_valid_number("Cost: $")
+        guitar = Guitar(name, year, cost)
+        guitars.append(guitar)
+        print(f"Guitar added: {guitar}")
+        name = input("Guitar name: ").strip()
+    return guitars
+
+
+
 
 def get_valid_number(prompt):
     """Validate input to get proper number"""
@@ -59,9 +75,8 @@ def get_valid_number(prompt):
             else:
                 print("Invalid input! Please enter valid numbers.")
         except ValueError:
-            print("Invalid number! Please enter a proper number.")
-
-
+            print("Value Error; Please enter a proper number.")
+    return number
 
 if __name__ == '__main__':
     main()
