@@ -19,6 +19,10 @@ class Guitar:
         """Return a string formatting of the Guitar object"""
         return f"{self.name} ({self.year}) : ${self.cost:,.2f}"
 
+    def __lt__(self, other):
+        """Return True if this guitar's year is less than other guitar's year."""
+        return self.year < other.year
+
     def get_age(self):
         """Return the age of the guitar in years."""
         current_year  = datetime.today().year
