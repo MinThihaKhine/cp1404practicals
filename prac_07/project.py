@@ -1,7 +1,10 @@
 """ Min Thiha Khine (#14686570)
 Estimated time: 20 minutes
-Actual time:  minutes
+Actual time:  21 minutes
 """
+from datetime import datetime
+
+DATE_FORMAT = "%d/%m/%Y"
 
 class Project:
     """Represent a project with name, start date, priority, cost estimate, and completion."""
@@ -27,7 +30,11 @@ class Project:
         """Compare projects by priority for sorting."""
         return self.priority < other.priority
 
-   def is_complete(self):
+    def is_complete(self):
         """Determine if the project is complete."""
         return self.completion_percentage == 100
+
+    def is_after_date(self, date):
+        """Check if project starts after or on the given date."""
+        return self.start_date >= date
 
