@@ -34,7 +34,8 @@ def main():
             projects = load_projects(filename)
             print(f"Loaded {len(projects)} projects from {filename}")
         elif choice == "S":
-            print("Saving projects")
+            filename = input("Filename to save projects to: ")
+            save_projects(filename, projects)
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
@@ -44,6 +45,9 @@ def main():
         elif choice == "U":
             print("Updating project")
         elif choice == "Q":
+            save_choice = input(f"Would you like to save to {FILENAME}? ").lower()
+            if save_choice.startswith('y'):
+                save_projects(FILENAME, projects)
             print("Thank you for using custom-built project management software.")
         else:
             print("Invalid choice")
@@ -88,5 +92,13 @@ def display_projects(projects):
     for project in complete:
         print(f"  {project}")
 
+def save_projects(filename, projects):
+    """Save projects to file."""
+    with open(filename, 'w') as file:
+        file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
+        for project in projects:
+            file.write(f"{project.name}\t{project.start_date}\t{project.priority}\t"
+                      f"{project.cost_estimate}\t{project.completion_percentage}\n")
+    print(f"{len(projects)} projects saved to {filename}")
 if __name__ == "__main__":
     main()
