@@ -198,18 +198,18 @@ def update_project(projects):
     for i, project in enumerate(projects):
         print(f"{i} {project}")
 
-    choice = int(input("Project choice: "))
+    choice = get_valid_int("Project choice: ", min_value=0, max_value=len(projects)-1)
     project = projects[choice]
     print(project)
 
-    # Get new values (allow blank to keep existing)
-    new_percentage = input("New Percentage: ")
-    new_priority = input("New Priority: ")
+    new_percentage = get_valid_int("New Percentage: ", min_value=0, max_value=100, allow_blank=True)
+    new_priority = get_valid_int("New Priority: ", min_value=1, allow_blank=True)
 
-    if new_percentage:
-        project.completion_percentage = int(new_percentage)
-    if new_priority:
-        project.priority = int(new_priority)
+    if new_percentage is not None:
+        project.completion_percentage = new_percentage
+    if new_priority is not None:
+        project.priority = new_priority
+
 
 
 def filter_projects_by_date(projects):
