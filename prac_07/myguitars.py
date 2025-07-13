@@ -1,4 +1,8 @@
-"""Min Thiha Khine (#14686570)"""
+"""
+Min Thiha Khine
+#14686570
+"""
+
 from prac_07.guitar import Guitar
 
 
