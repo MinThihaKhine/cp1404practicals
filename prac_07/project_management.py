@@ -2,9 +2,8 @@
 Estimated time: 40 minutes
 Actual time:
 """
-from project import Project
+from project import Project, DATE_FORMAT
 from datetime import datetime
-
 
 FILENAME = "projects.txt"
 
@@ -21,7 +20,7 @@ def main():
     """Run the project management program."""
     print("Welcome to Pythonic Project Management")
 
-    # Load projects from default file
+    # CHANGE: Load projects and show count before menu
     try:
         projects = load_projects(FILENAME)
         print(f"Loaded {len(projects)} projects from {FILENAME}")
@@ -35,25 +34,41 @@ def main():
         choice = input(">>> ").upper()
 
         if choice == "L":
+            # CHANGE: Added error handling for file loading
             filename = get_valid_string("Filename to load projects from: ")
-            projects = load_projects(filename)
-            print(f"Loaded {len(projects)} projects from {filename}")
+            try:
+                projects = load_projects(filename)
+                print(f"Loaded {len(projects)} projects from {filename}")
+            except FileNotFoundError:
+                print(f"Warning: {filename} not found.")
+
         elif choice == "S":
             filename = get_valid_string("Filename to save projects to: ")
             save_projects(filename, projects)
+
         elif choice == "D":
             display_projects(projects)
+
         elif choice == "F":
             filter_projects_by_date(projects)
+
         elif choice == "A":
             add_project(projects)
+
         elif choice == "U":
-            update_project(projects)
+            # CHANGE: Check if projects exist before updating
+            if projects:
+                update_project(projects)
+            else:
+                print("No projects to update!")
+
         elif choice == "Q":
+            # CHANGE: Handle quit with save option - any response not starting with 'n' is yes
             save_choice = input(f"Would you like to save to {FILENAME}? ").lower()
-            if save_choice.startswith('y'):
+            if not save_choice.startswith('n'):
                 save_projects(FILENAME, projects)
             print("Thank you for using custom-built project management software.")
+
         else:
             print("Invalid choice")
 
