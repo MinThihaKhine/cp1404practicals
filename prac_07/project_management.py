@@ -177,14 +177,16 @@ def save_projects(filename, projects):
                       f"{project.cost_estimate}\t{project.completion_percentage}\n")
     print(f"{len(projects)} projects saved to {filename}")
 
+
 def add_project(projects):
     """Add a new project to the list."""
     print("Let's add a new project")
+
     name = get_valid_string("Name: ")
-    start_date = input("Start date (dd/mm/yy): ")
-    priority = int(input("Priority: "))
-    cost_estimate = float(input("Cost estimate: $"))
-    completion_percentage = int(input("Percent complete: "))
+    start_date = get_valid_date("Start date (dd/mm/yy): ")
+    priority = get_valid_int("Priority: ", min_value=1)
+    cost_estimate = get_valid_float("Cost estimate: $", min_value=0)
+    completion_percentage = get_valid_int("Percent complete: ", min_value=0, max_value=100)
 
     new_project = Project(name, start_date, priority, cost_estimate, completion_percentage)
     projects.append(new_project)
