@@ -19,8 +19,11 @@ class Project:
 
     def __str__(self):
         """Return formatted string representation of a Project."""
-        return (f"{self.name}, start: {self.start_date}, priority {self.priority}, "
-                f"estimate: ${self.cost_estimate:.2f}, completion: {self.completion_percentage}%")
+        return (f"{self.name},"
+                f" start: {self.start_date.strftime(DATE_FORMAT)},"
+                f" priority {self.priority}, "
+                f"estimate: ${self.cost_estimate:.2f},"
+                f" completion: {self.completion_percentage}%")
 
     def __repr__(self):
         """Return string representation for debugging."""
