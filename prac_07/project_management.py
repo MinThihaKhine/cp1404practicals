@@ -57,6 +57,15 @@ def main():
         else:
             print("Invalid choice")
 
+
+def get_valid_string(prompt):
+    """Get non-empty string from user."""
+    value = input(prompt).strip()
+    while not value:
+        print("Input cannot be blank")
+        value = input(prompt).strip()
+    return value
+
 def load_projects(filename):
     """Load projects from file and return list of Project objects."""
     projects = []
