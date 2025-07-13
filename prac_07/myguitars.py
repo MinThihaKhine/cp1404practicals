@@ -8,6 +8,9 @@ def main():
     print("My Guitars!")
     guitars = read_guitars(FILENAME)
 
+    # Sort guitars by year and display
+    guitars.sort()
+    print("\nThese are my guitars sorted by year (oldest to newest):")
     display_guitars(guitars)
 
 def read_guitars(filename):
