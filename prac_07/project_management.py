@@ -19,7 +19,10 @@ MENU = """- (L)oad projects
 def main():
     """Run the project management program."""
     print("Welcome to Pythonic Project Management")
-    projects = []
+
+    # Load projects from default file
+    projects = load_projects(FILENAME)
+    print(f"Loaded {len(projects)} projects from {FILENAME}")
 
     choice = ""
     while choice != "Q":
@@ -27,7 +30,9 @@ def main():
         choice = input(">>> ").upper()
 
         if choice == "L":
-            print("Loading projects")
+            filename = input("Filename to load projects from: ")
+            projects = load_projects(filename)
+            print(f"Loaded {len(projects)} projects from {filename}")
         elif choice == "S":
             print("Saving projects")
         elif choice == "D":
@@ -43,6 +48,21 @@ def main():
         else:
             print("Invalid choice")
 
+def load_projects(filename):
+    """Load projects from file and return list of Project objects."""
+    projects = []
+    with open(filename, 'r') as file:
+        file.readline()  # Skip header
+        for line in file:
+            parts = line.strip().split('\t')
+            name = parts[0]
+            start_date = parts[1]
+            priority = int(parts[2])
+            cost_estimate = float(parts[3])
+            completion_percentage = int(parts[4])
+            project = Project(name, start_date, priority, cost_estimate, completion_percentage)
+            projects.append(project)
+    return projects
 
 if __name__ == "__main__":
     main()
