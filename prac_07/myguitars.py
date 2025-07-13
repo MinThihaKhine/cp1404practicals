@@ -1,4 +1,3 @@
-import csv
 
 from prac_07.guitar import Guitar
 
@@ -6,8 +5,10 @@ from prac_07.guitar import Guitar
 FILENAME = "guitars.csv"
 
 def main():
-    guitars = read_guitars(FILENAME)  # Read guitars from file
+    print("My Guitars!")
+    guitars = read_guitars(FILENAME)
 
+    display_guitars(guitars)
 
 def read_guitars(filename):
     """Read guitar data from CSV file and return list of Guitar objects"""
@@ -28,6 +29,12 @@ def read_guitars(filename):
 
 
 
+def display_guitars(guitars):
+    """Display all guitars in the list with numbers."""
+    for i, guitar in enumerate(guitars, 1):
+        print(f"Guitar {i}: {guitar}")
 
 
 
+if __name__ == '__main__':
+    main()
