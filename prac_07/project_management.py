@@ -22,3 +22,9 @@ class Project:
     def __repr__(self):
         """Return string representation for debugging."""
         return str(self)
+
+    def __lt__(self, other):
+        """Compare projects by priority for sorting."""
+        return self.priority < other.priority
+
+
