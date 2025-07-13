@@ -43,7 +43,7 @@ def main():
         elif choice == "A":
             add_project(projects)
         elif choice == "U":
-            print("Updating project")
+            update_project(projects)
         elif choice == "Q":
             save_choice = input(f"Would you like to save to {FILENAME}? ").lower()
             if save_choice.startswith('y'):
@@ -114,5 +114,24 @@ def add_project(projects):
     new_project = Project(name, start_date, priority, cost_estimate, completion_percentage)
     projects.append(new_project)
 
+
+def update_project(projects):
+    """Update an existing project's completion and/or priority."""
+    # Display all projects with indices
+    for i, project in enumerate(projects):
+        print(f"{i} {project}")
+
+    choice = int(input("Project choice: "))
+    project = projects[choice]
+    print(project)
+
+    # Get new values (allow blank to keep existing)
+    new_percentage = input("New Percentage: ")
+    new_priority = input("New Priority: ")
+
+    if new_percentage:
+        project.completion_percentage = int(new_percentage)
+    if new_priority:
+        project.priority = int(new_priority)
 if __name__ == "__main__":
     main()
