@@ -18,15 +18,9 @@ class Project:
         self.completion_percentage = completion_percentage
 
     def __str__(self):
-        """Return string representation of a Project."""
-        # Format date string if it's not already formatted
-        if '/' in self.start_date and len(self.start_date.split('/')[2]) == 4:
-            # Convert to date object and format
-            date_obj = datetime.datetime.strptime(self.start_date, "%d/%m/%Y").date()
-            date_str = date_obj.strftime("%d/%m/%Y")
-        else:
-            date_str = self.start_date
-
+        """Return formatted string representation of a Project."""
+        # CHANGE: Format date string to match sample output
+        date_str = self.start_date.strftime(DATE_FORMAT)
         return (f"{self.name}, start: {date_str}, priority {self.priority}, "
                 f"estimate: ${self.cost_estimate:.2f}, completion: {self.completion_percentage}%")
 
@@ -45,4 +39,3 @@ class Project:
     def is_after_date(self, date):
         """Check if project starts after or on the given date."""
         return self.start_date >= date
-
