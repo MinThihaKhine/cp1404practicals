@@ -130,7 +130,7 @@ def load_projects(filename):
         for line in file:
             parts = line.strip().split('\t')
             name = parts[0]
-            start_date = parts[1]
+            start_date = datetime.strptime(parts[1], DATE_FORMAT)
             priority = int(parts[2])
             cost_estimate = float(parts[3])
             completion_percentage = int(parts[4])
