@@ -141,8 +141,13 @@ def load_projects(filename):
 
 def display_projects(projects):
     """Display projects grouped by completion status and sorted by priority."""
+    if not projects:
+        print("No projects!")
+        return
+
     incomplete = []
     complete = []
+
 
     for project in projects:
         if project.is_complete():
