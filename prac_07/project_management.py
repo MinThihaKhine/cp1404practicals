@@ -41,7 +41,7 @@ def main():
         elif choice == "F":
             print("Filtering projects")
         elif choice == "A":
-            print("Adding project")
+            add_project(projects)
         elif choice == "U":
             print("Updating project")
         elif choice == "Q":
@@ -100,5 +100,19 @@ def save_projects(filename, projects):
             file.write(f"{project.name}\t{project.start_date}\t{project.priority}\t"
                       f"{project.cost_estimate}\t{project.completion_percentage}\n")
     print(f"{len(projects)} projects saved to {filename}")
+
+
+def add_project(projects):
+    """Add a new project to the list."""
+    print("Let's add a new project")
+    name = input("Name: ")
+    start_date = input("Start date (dd/mm/yy): ")
+    priority = int(input("Priority: "))
+    cost_estimate = float(input("Cost estimate: $"))
+    completion_percentage = int(input("Percent complete: "))
+
+    new_project = Project(name, start_date, priority, cost_estimate, completion_percentage)
+    projects.append(new_project)
+
 if __name__ == "__main__":
     main()
