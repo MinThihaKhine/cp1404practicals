@@ -7,7 +7,6 @@ FILENAME = "guitars.csv"
 def main():
     """Read guitars data and ask user to add more back to file"""
     guitars = read_guitars(FILENAME)
-
     print(f"Imported {len(guitars)} from {FILENAME}")
     print("My Guitars!")
 
@@ -20,6 +19,18 @@ def main():
     print("\nEnter guitar details (press Enter for empty name to stop):")
     new_guitars = get_new_guitars()
 
+    # Add new guitars to collection
+    for guitar in new_guitars:
+        guitars.append(guitar)
+
+    # Sort and display final collection
+    guitars.sort()
+    print(f"\nThese are my current guitars:")
+    display_guitars(guitars)
+    print(f"Wrote {len(guitars)} guitars to {FILENAME}")
+
+    # Write all guitars back to file
+    write_guitars_to_file(FILENAME, guitars)
 
 
 
@@ -77,6 +88,12 @@ def get_valid_number(prompt):
         except ValueError:
             print("Value Error; Please enter a proper number.")
     return number
+
+def write_guitars_to_file(filename, guitars):
+    """Write guitars to CSV file"""
+    with open(filename, 'w') as file:
+        for guitar in guitars:
+            file.write(f"{guitar.name},{guitar.year},{guitar.cost}\n")
 
 if __name__ == '__main__':
     main()
