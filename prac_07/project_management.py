@@ -167,10 +167,10 @@ def save_projects(filename, projects):
     with open(filename, 'w') as file:
         file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
         for project in projects:
-            file.write(f"{project.name}\t{project.start_date}\t{project.priority}\t"
+            date_str = project.start_date.strftime(DATE_FORMAT)
+            file.write(f"{project.name}\t{date_str}\t{project.priority}\t"
                       f"{project.cost_estimate}\t{project.completion_percentage}\n")
     print(f"{len(projects)} projects saved to {filename}")
-
 
 def add_project(projects):
     """Add a new project to the list."""
