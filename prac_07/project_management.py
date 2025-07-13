@@ -36,7 +36,7 @@ def main():
         elif choice == "S":
             print("Saving projects")
         elif choice == "D":
-            print("Displaying projects")
+            display_projects(projects)
         elif choice == "F":
             print("Filtering projects")
         elif choice == "A":
@@ -63,6 +63,30 @@ def load_projects(filename):
             project = Project(name, start_date, priority, cost_estimate, completion_percentage)
             projects.append(project)
     return projects
+
+
+def display_projects(projects):
+    """Display projects grouped by completion status and sorted by priority."""
+    incomplete = []
+    complete = []
+
+    for project in projects:
+        if project.is_complete():
+            complete.append(project)
+        else:
+            incomplete.append(project)
+
+    # Sort by priority
+    incomplete.sort()
+    complete.sort()
+
+    print("Incomplete projects:")
+    for project in incomplete:
+        print(f"  {project}")
+
+    print("Completed projects:")
+    for project in complete:
+        print(f"  {project}")
 
 if __name__ == "__main__":
     main()
