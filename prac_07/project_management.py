@@ -1,6 +1,6 @@
 """ Min Thiha Khine (#14686570)
 Estimated time: 40 minutes
-Actual time:
+Actual time: 210 minutes
 """
 from project import Project, DATE_FORMAT
 from datetime import datetime
