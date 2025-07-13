@@ -3,6 +3,7 @@ Estimated time: 40 minutes
 Actual time:
 """
 from project import Project
+from datetime import datetime
 
 
 FILENAME = "projects.txt"
@@ -39,7 +40,7 @@ def main():
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
-            print("Filtering projects")
+            filter_projects_by_date(projects)
         elif choice == "A":
             add_project(projects)
         elif choice == "U":
@@ -133,5 +134,25 @@ def update_project(projects):
         project.completion_percentage = int(new_percentage)
     if new_priority:
         project.priority = int(new_priority)
+
+
+def filter_projects_by_date(projects):
+    """Display projects that start after a given date."""
+    date_string = input("Show projects that start after date (dd/mm/yy): ")
+    filter_date = datetime.strptime(date_string, "%d/%m/%Y").date()
+
+    filtered_projects = []
+    for project in projects:
+        # Convert project date string to date object for comparison
+        project_date = datetime.strptime(project.start_date, "%d/%m/%Y").date()
+        if project_date >= filter_date:
+            filtered_projects.append(project)
+
+    # Sort by date
+    filtered_projects.sort(key=lambda p: datetime.strptime(p.start_date, "%d/%m/%Y"))
+
+    for project in filtered_projects:
+        print(project)
+
 if __name__ == "__main__":
     main()
