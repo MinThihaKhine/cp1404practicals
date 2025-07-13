@@ -1,10 +1,12 @@
 """ Min Thiha Khine (#14686570)
 Estimated time: 20 minutes
-Actual time:  21 minutes
+Actual time:  minutes
 """
+
 from datetime import datetime
 
 DATE_FORMAT = "%d/%m/%Y"
+
 
 class Project:
     """Represent a project with name, start date, priority, cost estimate, and completion."""
