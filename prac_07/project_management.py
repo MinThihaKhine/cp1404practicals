@@ -22,8 +22,12 @@ def main():
     print("Welcome to Pythonic Project Management")
 
     # Load projects from default file
-    projects = load_projects(FILENAME)
-    print(f"Loaded {len(projects)} projects from {FILENAME}")
+    try:
+        projects = load_projects(FILENAME)
+        print(f"Loaded {len(projects)} projects from {FILENAME}")
+    except FileNotFoundError:
+        print(f"Warning: {FILENAME} not found. Starting with empty project list.")
+        projects = []
 
     choice = ""
     while choice != "Q":
