@@ -35,11 +35,11 @@ def main():
         choice = input(">>> ").upper()
 
         if choice == "L":
-            filename = input("Filename to load projects from: ")
+            filename = get_valid_string("Filename to load projects from: ")
             projects = load_projects(filename)
             print(f"Loaded {len(projects)} projects from {filename}")
         elif choice == "S":
-            filename = input("Filename to save projects to: ")
+            filename = get_valid_string("Filename to save projects to: ")
             save_projects(filename, projects)
         elif choice == "D":
             display_projects(projects)
@@ -119,7 +119,7 @@ def save_projects(filename, projects):
 def add_project(projects):
     """Add a new project to the list."""
     print("Let's add a new project")
-    name = input("Name: ")
+    name = get_valid_string("Name: ")
     start_date = input("Start date (dd/mm/yy): ")
     priority = int(input("Priority: "))
     cost_estimate = float(input("Cost estimate: $"))
