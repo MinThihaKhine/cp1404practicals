@@ -212,21 +212,25 @@ def update_project(projects):
 
 def filter_projects_by_date(projects):
     """Display projects that start after a given date."""
-    date_string = input("Show projects that start after date (dd/mm/yy): ")
-    filter_date = datetime.strptime(date_string, "%d/%m/%Y").date()
+    if not projects:
+        print("No projects to filter!")
+        return
+
+    filter_date = get_valid_date("Show projects that start after date (dd/mm/yy): ")
 
     filtered_projects = []
     for project in projects:
-        # Convert project date string to date object for comparison
-        project_date = datetime.strptime(project.start_date, "%d/%m/%Y").date()
-        if project_date >= filter_date:
+        if project.is_after_date(filter_date):
             filtered_projects.append(project)
 
     # Sort by date
-    filtered_projects.sort(key=lambda p: datetime.strptime(p.start_date, "%d/%m/%Y"))
+    filtered_projects.sort(key=lambda p: p.start_date)
 
-    for project in filtered_projects:
-        print(project)
+    if filtered_projects:
+        for project in filtered_projects:
+            print(project)
+    else:
+        print("No projects found after that date.")
 
 if __name__ == "__main__":
     main()
