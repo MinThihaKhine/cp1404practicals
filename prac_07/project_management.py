@@ -20,7 +20,6 @@ def main():
     """Run the project management program."""
     print("Welcome to Pythonic Project Management")
 
-    # CHANGE: Load projects and show count before menu
     try:
         projects = load_projects(FILENAME)
         print(f"Loaded {len(projects)} projects from {FILENAME}")
@@ -34,7 +33,6 @@ def main():
         choice = input(">>> ").upper()
 
         if choice == "L":
-            # CHANGE: Added error handling for file loading
             filename = get_valid_string("Filename to load projects from: ")
             try:
                 projects = load_projects(filename)
@@ -56,14 +54,12 @@ def main():
             add_project(projects)
 
         elif choice == "U":
-            # CHANGE: Check if projects exist before updating
             if projects:
                 update_project(projects)
             else:
                 print("No projects to update!")
 
         elif choice == "Q":
-            # CHANGE: Handle quit with save option - any response not starting with 'n' is yes
             save_choice = input(f"Would you like to save to {FILENAME}? ").lower()
             if not save_choice.startswith('n'):
                 save_projects(FILENAME, projects)
@@ -80,6 +76,51 @@ def get_valid_string(prompt):
         print("Input cannot be blank")
         value = input(prompt).strip()
     return value
+
+
+def get_valid_int(prompt, min_value=None, max_value=None, allow_blank=False):
+    """Get valid integer within specified bounds."""
+    while True:
+        value = input(prompt).strip()
+
+        if allow_blank and value == "":
+            return None
+
+        try:
+            value = int(value)
+            if min_value is not None and value < min_value:
+                print(f"Number must be >= {min_value}")
+                continue
+            if max_value is not None and value > max_value:
+                print(f"Number must be <= {max_value}")
+                continue
+            return value
+        except ValueError:
+            print("Invalid input. Please enter a whole number.")
+
+
+def get_valid_float(prompt, min_value=None):
+    """Get valid float number."""
+    while True:
+        try:
+            value = float(input(prompt))
+            if min_value is not None and value < min_value:
+                print(f"Number must be >= {min_value}")
+                continue
+            return value
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+
+def get_valid_date(prompt):
+    """Get valid date in dd/mm/yyyy format."""
+    while True:
+        date_string = input(prompt).strip()
+        try:
+            date = datetime.strptime(date_string, DATE_FORMAT)
+            return date
+        except ValueError:
+            print(f"Invalid date format. Please use dd/mm/yyyy")
 
 def load_projects(filename):
     """Load projects from file and return list of Project objects."""
