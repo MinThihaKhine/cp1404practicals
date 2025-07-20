@@ -1,6 +1,5 @@
 from kivy.app import App
 from kivy.lang import Builder
-from kivy.uix.button import Button
 from kivy.properties import StringProperty
 
 MILES_TO_KM_RATE = 1.60934
@@ -8,6 +7,7 @@ MILES_TO_KM_RATE = 1.60934
 
 class MilesKMConverter(App):
     """ MilesConverterApp is a Kivy App for converting miles to kilometres """
+    output_km = StringProperty('54.71756')
     def build(self):
         """ build the Kivy app from the kv file """
         self.title = "Convert Miles to Kilometres"
@@ -26,7 +26,7 @@ class MilesKMConverter(App):
         """Convert validated miles value kilometres """
         value = self.get_validated_miles()
         kilometres = value * MILES_TO_KM_RATE
-        self.root.ids.output_label.text = str(kilometres)
+        self.output_km = str(kilometres)   # Use the StringProperty instead
 
     def handle_increment(self, change):
         """Adjust the miles input by +1 or -1 when Up/Down buttons are clicked."""

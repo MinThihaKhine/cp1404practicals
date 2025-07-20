@@ -6,7 +6,6 @@ BoxLayout:
             id: input_miles
             text: '34' # Default value
             font_size: 48
-            on_text: app.handle_conversion()
         BoxLayout:
             orientation: 'vertical'
             size_hint_x: 0.25
@@ -18,11 +17,11 @@ BoxLayout:
                 on_press: app.handle_increment(-1)
     BoxLayout:
         Button:
-            text: 'Convert m to km'
+            text: 'Convert miles to km'
             on_press: app.handle_conversion()
     BoxLayout:
         Label:
             id: output_label
-            text: '54.717' # Default value
+            text: app.output_km  # Bind to the StringProperty
             font_size: 48
             color: (1,1,0,1)
