@@ -28,6 +28,10 @@ class MilesKMConverter(App):
         kilometres = value * MILES_TO_KM_RATE
         self.root.ids.output_label.text = str(kilometres)
 
-
+    def handle_increment(self, change):
+        """Adjust the miles input by +1 or -1 when Up/Down buttons are clicked."""
+        value = self.get_validated_miles() + change
+        self.root.ids.input_miles.text = str(value)
+        self.handle_conversion()
 
 MilesKMConverter().run()
