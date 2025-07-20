@@ -1,3 +1,4 @@
+"""Min Thiha Khine ( #14686570)"""
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.label import Label
