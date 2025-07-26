@@ -1,10 +1,9 @@
-"""
+""" Min Thiha Khine (#14686570)
 CP1404/CP5632 Practical
 UnreliableCar class
 """
 import random
 
-from prac_04.quick_picks import MINIMUM_RANDOM_NUMBER, MAXIMUM_RANDOM_NUMBER
 from prac_09.car import Car
 
 
