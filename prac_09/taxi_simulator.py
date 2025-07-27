@@ -24,6 +24,9 @@ def main():
         if choice == "c":
             print("Taxis available:")
             display_taxis(taxis)
+            selected_taxi = choose_taxi(taxis)
+            if selected_taxi:
+                current_taxi = selected_taxi
         elif choice == "d":
             pass
         else:
@@ -38,6 +41,15 @@ def display_taxis(taxis):
     """Display all taxis with their current status."""
     for index, taxi in enumerate(taxis):
         print(f"{index} - {taxi}")
+
+def choose_taxi(taxis):
+    """Get taxi selection from user and handle invalid choices."""
+    try:
+        taxi_choice = int(input("Choose taxi: "))
+        return taxis[taxi_choice]
+    except (ValueError, IndexError):
+        print("Invalid taxi choice")
+        return None
 
 if __name__ == '__main__':
     main()
