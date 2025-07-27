@@ -68,10 +68,11 @@ def choose_taxi(taxis):
 
 def get_distance():
     """Get valid distance input from user with error handling."""
+    MINIMUM_DISTANCE = 0
     while True:
         try:
             distance = float(input("Drive how far? "))
-            if distance >= 0:
+            if distance >= MINIMUM_DISTANCE:
                 return distance
             else:
                 print("Distance must be positive")
