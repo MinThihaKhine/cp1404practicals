@@ -1,6 +1,6 @@
 """ Min Thiha Khine (#14686570)
 CP1404/CP5632 Practical
-Taxi Simulator - Distance Validation
+Taxi Simulator - Complete Version
 """
 from prac_09.taxi import Taxi
 from prac_09.silver_service_taxi import SilverServiceTaxi
@@ -43,6 +43,11 @@ def main():
         print(f"Bill to date: ${total_bill:.2f}")
         print(MENU)
         choice = input(">>> ").lower()
+
+    # Final summary when user quits
+    print(f"Total trip cost: ${total_bill:.2f}")
+    print("Taxis are now:")
+    display_taxis(taxis)
 
 
 def display_taxis(taxis):
