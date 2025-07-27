@@ -1,6 +1,6 @@
 """ Min Thiha Khine (#14686570)
 CP1404/CP5632 Practical
-Taxi Simulator - Step by Step Build
+Taxi Simulator - Drive Functionality
 """
 from prac_09.taxi import Taxi
 from prac_09.silver_service_taxi import SilverServiceTaxi
@@ -28,7 +28,15 @@ def main():
             if selected_taxi:
                 current_taxi = selected_taxi
         elif choice == "d":
-            pass
+            if current_taxi:
+                current_taxi.start_fare()
+                distance = float(input("Drive how far? "))
+                current_taxi.drive(distance)
+                trip_cost = current_taxi.get_fare()
+                print(f"Your {current_taxi.name} trip cost you ${trip_cost:.2f}")
+                total_bill += trip_cost
+            else:
+                print("You need to choose a taxi before you can drive")
         else:
             print("Invalid option")
 
@@ -41,6 +49,7 @@ def display_taxis(taxis):
     """Display all taxis with their current status."""
     for index, taxi in enumerate(taxis):
         print(f"{index} - {taxi}")
+
 
 def choose_taxi(taxis):
     """Get taxi selection from user and handle invalid choices."""
