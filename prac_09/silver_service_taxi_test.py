@@ -19,8 +19,8 @@ def test():
     print(silver_service_taxi)
 
     # Assert test for the expected fare
-    # Calculation: (1.23 * 2 * 18) + 4.50 = 44.28 + 4.50 = 48.78
-    assert fare == 48.78, f"Expected $48.78, got ${fare:.2f}"
+    # Calculation: (1.23 * 2 * 18) + 4.50 = 44.28 + 4.50 = 48.78, rounded to 48.8
+    assert fare == 48.8, f"Expected $48.8, got ${fare:.2f}"
     print("Test passed! ")
 
 
