@@ -18,3 +18,9 @@ class Band:
             musician_strings.append(str(musician))
         return f"{self.name} ({', '.join(musician_strings)})"
 
+    def play(self):
+        """Return string showing each musician playing or needing an instrument."""
+        result = []
+        for musician in self.musicians:
+            result.append(musician.play())
+        return "\n".join(result)
