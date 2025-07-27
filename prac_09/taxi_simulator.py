@@ -5,6 +5,7 @@ Taxi Simulator - Complete Version
 from prac_09.taxi import Taxi
 from prac_09.silver_service_taxi import SilverServiceTaxi
 
+# Menu
 MENU = "q)uit, c)hoose taxi, d)rive"
 
 def main():
