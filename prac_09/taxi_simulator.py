@@ -1,6 +1,6 @@
 """ Min Thiha Khine (#14686570)
 CP1404/CP5632 Practical
-Taxi Simulator - Drive Functionality
+Taxi Simulator - Distance Validation
 """
 from prac_09.taxi import Taxi
 from prac_09.silver_service_taxi import SilverServiceTaxi
@@ -30,7 +30,7 @@ def main():
         elif choice == "d":
             if current_taxi:
                 current_taxi.start_fare()
-                distance = float(input("Drive how far? "))
+                distance = get_distance()
                 current_taxi.drive(distance)
                 trip_cost = current_taxi.get_fare()
                 print(f"Your {current_taxi.name} trip cost you ${trip_cost:.2f}")
@@ -59,6 +59,19 @@ def choose_taxi(taxis):
     except (ValueError, IndexError):
         print("Invalid taxi choice")
         return None
+
+
+def get_distance():
+    """Get valid distance input from user with error handling."""
+    while True:
+        try:
+            distance = float(input("Drive how far? "))
+            if distance >= 0:
+                return distance
+            else:
+                print("Distance must be positive")
+        except ValueError:
+            print("Invalid distance")
 
 if __name__ == '__main__':
     main()
