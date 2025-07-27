@@ -13,6 +13,9 @@ def main():
              SilverServiceTaxi("Limo", 100, 2),
              SilverServiceTaxi("Hummer", 200, 4)]
 
+    current_taxi = None  # No taxi selected initially
+    total_bill = 0.0  # Track total cost
+
     print("Let's drive!")
     print(MENU)
     choice = input(">>> ").lower()
