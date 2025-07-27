@@ -22,16 +22,22 @@ def main():
 
     while choice != "q":
         if choice == "c":
-            pass
+            print("Taxis available:")
+            display_taxis(taxis)
         elif choice == "d":
             pass
         else:
             print("Invalid option")
 
+        print(f"Bill to date: ${total_bill:.2f}")
         print(MENU)
         choice = input(">>> ").lower()
 
 
+def display_taxis(taxis):
+    """Display all taxis with their current status."""
+    for i, taxi in enumerate(taxis):
+        print(f"{i} - {taxi}")
 
 if __name__ == '__main__':
     main()
