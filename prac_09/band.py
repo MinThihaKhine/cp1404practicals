@@ -1,3 +1,5 @@
+"""Band Class - Min Thiha Khine (#14686570) """
+
 class Band:
     """A band contains multiple musicians."""
 
