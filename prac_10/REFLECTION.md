@@ -26,11 +26,12 @@ for certain types of tasks.
 
 ### What have you learned from being reviewed by other people?
 
-...
+I learned to see my code from another perspective. Reviewers often pointed out areas where I could simplify my code, use better naming conventions, or make it more Pythonic. It made me more open to feedback and taught me to improve my code quality without taking criticism personally.
 
 ### What have you learned from doing code reviews of other people?
 
-...
+
+Doing code reviews helped me practice critical thinking and reinforced my own understanding of good coding practices. I learned to spot both logic errors and style issues, and reviewing others' code often gave me ideas for improving my own.
 
 Provide proper Markdown links (not bare URLs) to two (2) PRs that show you doing good code reviews for any of the past
 pracs.  
