@@ -26,12 +26,14 @@ for certain types of tasks.
 
 ### What have you learned from being reviewed by other people?
 
-I learned to see my code from another perspective. Reviewers often pointed out areas where I could simplify my code, use better naming conventions, or make it more Pythonic. It made me more open to feedback and taught me to improve my code quality without taking criticism personally.
+I learned to see my code from another perspective. Reviewers often pointed out areas where I could simplify my code, use
+better naming conventions, or make it more Pythonic. It made me more open to feedback and taught me to improve my code
+quality without taking criticism personally.
 
 ### What have you learned from doing code reviews of other people?
 
-
-Doing code reviews helped me practice critical thinking and reinforced my own understanding of good coding practices. I learned to spot both logic errors and style issues, and reviewing others' code often gave me ideas for improving my own.
+Doing code reviews helped me practice critical thinking and reinforced my own understanding of good coding practices. I
+learned to spot both logic errors and style issues, and reviewing others' code often gave me ideas for improving my own.
 
 Provide proper Markdown links (not bare URLs) to two (2) PRs that show you doing good code reviews for any of the past
 pracs.  
@@ -39,19 +41,26 @@ For each one, write a short explanation of what was good about your review.
 
 ### Good Code Review 1
 
-[]()
+[Practical 5 PR](https://github.com/lzhpeng/CP1404-practicals/pull/1#issuecomment-3040969367)
 
 ### Explanation
 
-...
+This review combined both code-level and professional practice feedback. I highlighted good aspects of the
+implementation, such as clear structure and readable formatting. At the same time, I encouraged improvements like
+avoiding magic numbers by dynamically calculating values (e.g. string width for alignment), and using clearer variable
+names. Beyond the code, I provided guidance on writing better commit messages by explaining how to use imperative mood
+and be more concise. I also gave examples to make the suggestions practical and easy to apply. This review shows an
+understanding of both clean coding principles and real-world development habits.
 
 ### Good Code Review 2
 
-[]()
+[Practical 6 PR](https://github.com/luchuanjun/cp1404practicals/pull/2#issuecomment-3066718928)
 
 ### Explanation
 
-...
+I praised the code for being readable and functional, then suggested a more maintainable approach for formatting output.
+Instead of hardcoding spacing (e.g., :>20), I recommended calculating the maximum length dynamically, which makes the
+program more adaptable to different data inputs. This shows attention to both usability and scalability.
 
 ## Practicals
 
