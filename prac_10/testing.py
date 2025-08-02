@@ -1,6 +1,7 @@
 """
 CP1404/CP5632 Practical
 Testing code using assert and doctest
+Min Thiha Khine (#14686570)
 """
 
 import doctest
