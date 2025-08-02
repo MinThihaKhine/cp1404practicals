@@ -1,7 +1,7 @@
 # CP1404 Practical Reflection
 
-Write short but thoughtful answers to each of the following.  
-Replace each `...` with your meaningful answer.
+Min Thiha Khine
+#14686570
 
 ## Estimates
 
@@ -66,8 +66,10 @@ program more adaptable to different data inputs. This shows attention to both us
 
 ### Regarding the **practical tasks** overall, what would you change if you were in charge of the subject?
 
-...
+I would include more real-world context in the tasks, perhaps small projects that simulate actual software problems. I’d
+also encourage pair programming for a few practicals to foster collaboration and shared learning.
 
 ### What did you do really well for practicals in this subject?
 
-...
+I stayed consistent with completing all tasks on time and kept my code organized and readable. I also put effort into
+testing my code thoroughly and learning from my mistakes through feedback and self-reflection.
