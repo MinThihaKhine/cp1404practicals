@@ -9,15 +9,18 @@ Regarding the **estimates** that you did for practical tasks...
 
 ### How was your estimate accuracy usually?
 
-...
+My estimate accuracy was inconsistent at first. Sometimes I underestimated how long a task would take, especially when
+it involved new concepts or debugging. Other times, I overestimated simpler tasks.
 
 ### How did your estimate accuracy improve or change during the course of the subject?
 
-...
+better at identifying which parts would likely take longer, such as debugging or researching unfamiliar modules.
 
 ### What did you learn from doing these estimates?
 
-...
+I learned to approach tasks more strategically. Estimating time forced me to think ahead, consider possible challenges,
+and manage my time more efficiently. It also helped me recognize patterns in how I work and how long I typically take
+for certain types of tasks.
 
 ## Code Reviews
 
